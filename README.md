@@ -1,15 +1,13 @@
 NuGrid Sensitivity Tool (NUSENSI)
 =======
 
-'''
     02/15: CR: Updated and new features
     12/12: Adapted for general use + features added C. Ritter
-    For suggestions or bug reports please contact critter@uvic.ca    
+    For suggestions or bug reports please contact critter[at]uvic.ca    
  
     Based on scripts written by A. Koloczek and B. Thomas 
-'''
 
-This directory contains the NUSENSI tool for
+Contains the NUSENSI tool for
 rate test calculations with the single-zone PPN and analyze
 the results with ipython.
 Multiple PPN runs can be started in parallel, each
