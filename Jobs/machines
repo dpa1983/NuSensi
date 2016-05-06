@@ -1,0 +1,4 @@
+#server name degu, 1 processor/PPN run executed per machine
+#server name gerbil, 1 processor/PPN run executed per machine
+degu procs=1
+gerbil procs=1

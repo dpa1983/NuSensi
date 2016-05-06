@@ -1,0 +1,30 @@
+
+1. compile:
+   edit PATH TO PPN CODE DIR (PCD) in Makefile, default ok in example dir
+   
+   clean: `make distclean` ( only necessary if you made changes to
+                            INDEX_REACLIB or NNN)
+   make: `make`
+
+2. run: `./ppn.exe'
+
+Content of this directory:
+
+ppn_frame.input			These are the input decks for the three 
+ppn_physics.input		packages, frame, physics and solver.
+ppn_solver.input
+
+isotopedatabase.txt		standard species file
+README				this file 
+Makefile                        Makefile for the code
+trajectory.input		these trajectories can be written with the 
+				ascii_table.py module
+python-scripts			several python plot scripts that produce 
+				meaningful visuals of this run, run either as 
+				'python script.py' or within an 
+				ipython --pylab session via 'ed scipt.py' for
+				an interactive experience (you may want to turn
+				on the 'show' option in some of the plot 
+				commands)
+p20.dat				the initial abundance file
+

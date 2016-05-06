@@ -1,0 +1,32 @@
+'''
+    NUSENSI tool
+
+    02/15: CR: Updated and new features
+    12/12: Adapted for general use + features added C. Ritter
+    For suggestions or bug reports please contact critter@uvic.ca
+
+    Based on scripts written by A. Koloczek and B. Thomas
+'''
+
+
+How to create your own run template: 
+
+Each run executed in the JOBS directory 
+starts as a copy of src_template (which is
+a ppn run directory).
+
+Instructions:
+
+1. Replace NPDATA in this directory with the one from your installed PPN version.
+2. Replace the src_template with your ppn directory.
+   The ppn directory is your run dir without any rate modifications.
+   a) Compile and run the src_template dir with ININET = 1 in 
+      ppn_physics.input. It starts PPN but only creates the networksetup.txt and
+      then stops.
+   b) Set afterwards ININET = 3 to allow the program to start with the created networksetup.txt.
+   c) Add run_sens.sh to your ppn directory.
+   Note that the currently available src_template dirs are the C13-pocket example and the 
+   i-process example. See the INFO file in each template dir.
+
+You are done!
+

@@ -1,0 +1,68 @@
+'''
+    NUSENSI testing tool
+
+    10/15: ... 
+    02/15: Updated and new features
+    12/12: Adapted for general use + features added C. Ritter
+    For suggestions or bug reports please contact critter@uvic.ca
+
+    Based on scripts written by A. Koloczek and B. Thomas
+'''
+
+General scheme:
+
+Relevant parameter are set
+in nusensi.input. After starting PPN runs are executed based
+on the list saved in runlist.txt.
+How many runs can be calculated in parallel depends on how much
+resources (processors/procs) are specified in the file machines.
+
+
+The 
+   
+   a) Define a range of rates and one factor by which the rates whill be changed.
+      For each modified rate only one PPN run is started.     
+      
+   b) Modify rate(s) which will be changed by (a) specific factor(s).
+
+
+How to do start the PPN calculations:
+
+1. First specify in nusensi.input the run parameter such as the location of the ppn.exe
+   and the inirates parameter.
+   a) inirates = 0
+      Define a range of rates and one factor by which the rates whill be changed.
+      The code will then add to runlist.txt for each modified rate only one PPN run.
+      Afterwards it stops. If indicated, rateslist.txt will be created which serves
+      only as a log file for the user and is not necessary for the program.
+   b) inirates = 1
+      NUSENSI reads in the runlist.txt  and executes the runs specified.
+   c) inirates = 2
+      The code performs steps a) and b)
+
+   For an example see the file runlist.txt_example.
+
+2. Adapt the machine file which contains the machines and number of processors
+   which will be used by each machine. Note that each run requires one processor.
+   The sum of all assigned procs must be equal or smaller then the number of rates to be changed.
+   (see run.sh: e.g. network size = network_stop - network_start +1)
+   Feature coming soon: If not (procs=0) the script will do
+                        a run for each available procs, and going filling up the free upcoming procs
+
+4. You can start the calculations via ./run.sh.
+
+   It first creates runlist.txt. This file contains
+   If a run was already done (existence of the the corresponding results dir in path_results)
+   before the runlist.txt creation it won't appear in runlist.txt and won't be executed.	
+   It is possible to edit the file when you are asked during
+   executing e.g. you want specific rates to be changed. This is option b) (e.g. for ppn hif).
+   After creation of runlist.txt (and after editing) the program starts. 
+   Note that the line is removed if the corresponding run
+   is executed. This allows to get at every time an overview over the upcoming runs, if many are performed.
+
+For maintainance the following scripts are available:
+
+clean_all.sh : 
+kill_all.sh : Kill all ppn.exe runs on all machines specified in machines file
+
+

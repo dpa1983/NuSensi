@@ -1,0 +1,40 @@
+#!/bin/bash
+
+########## ENVIRONMENT
+
+#two different paths below allow a splitting of simulation directories and results.
+#1) All run dirs are in:
+ppn_path="../simulations"
+#do you want to delete the simulation directories after each run finished to save space?
+delete_ppn_dirs=true #false
+
+#2) location of dirs with results of the calculations (e.g. *.DAT files specified below)
+#(Must be accesible by all machines)
+path_results="../results"
+
+########## INPUT
+
+#how to provide runlist.txt? specify 0, 1 or 2
+inirates=1
+
+#When use inirates=0 range of modified rates has to be specified below.
+#Rate ID to start and to stop as given in networksetup.txt.
+#There one can find the rate ID in the first column where the REACTION NETWORK
+#starts (1 is first ID for first rate in file).
+network_start=229
+network_stop=230
+#factor for rate changes applied when using inirates=0
+factor=0.01
+
+# how nice are you? (nice -NVAL)
+NVAL=19
+
+########## OUTPUT 
+
+#After a run produced the *.DAT file of the cycle or cycles specified below
+#it stops.
+#(Because of PPN, maximum cycle can be only be cycle before the T_max cycle)
+#Note that in each *.DAT file only 1 cycle is stored.
+cycle=(00518) #518)   #for i process example
+#cycle=(00125)  #for C13 pocket example
+
