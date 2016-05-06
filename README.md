@@ -2,9 +2,8 @@ NuGrid Sensitivity Tool (NUSENSI)
 =======
 
 Contains the NUSENSI tool for
-rate test calculations with the single-zone PPN and analyze
-the results with ipython.
-
+rate sensitivity studies with NuGrids single-zone nucleosynthesis tool PPN.
+A python framework allows to perform a direct analysis.
 
     02/15: CR: Updated and new features
     12/12: Adapted for general use + features added C. Ritter
