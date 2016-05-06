@@ -1,6 +1,7 @@
-'''
-    NuGrid Sensitivity Tool (NUSENSI)
+NuGrid Sensitivity Tool (NUSENSI)
+=======
 
+'''
     02/15: CR: Updated and new features
     12/12: Adapted for general use + features added C. Ritter
     For suggestions or bug reports please contact critter@uvic.ca    
